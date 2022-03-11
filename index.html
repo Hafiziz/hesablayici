@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Kalkulyator</title>
+    <style> 
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&family=Ubuntu&display=swap');
+
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ 
+
+}
+body{
+    background-color: #d3e4e5;
+}
+.box{
+   
+    width: 20rem;
+    height: 36rem;
+    background-color: #96aeaf;
+    top: 16vh;
+    position: relative;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 0.6rem;
+    transition-duration: 0.5s;
+
+}
+.bx{
+
+width: 4rem;
+height: 4rem;
+background-color: #829899;
+margin: 7px;
+box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+border-radius: 0.6rem;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #fff;
+cursor: pointer;
+font-size: 1.5rem;
+font-family: 'Ubuntu', sans-serif;
+
+
+}
+.bx:hover{
+    opacity: 0.5;
+    transition-duration: 0.1s;
+    cursor: pointer;
+   
+}
+.bx:active{
+
+    background-color: yellow;
+    color: #00000f;
+}
+
+.littleBox{
+
+    display: flex;
+   flex-wrap: wrap;
+  position: relative;
+  top: 3rem;
+  left: 0.2rem;
+
+
+}
+hr{
+
+    position: relative;
+    top: 42px;
+    margin-left: 9px;
+    margin-right: 10px;
+   
+}
+.bxx{
+
+    font-size: 1.2rem;
+}
+.bxb{
+    font-size: 1.4rem;
+    
+}
+.bxch{
+    font-size: 1.8rem;
+}
+img{
+
+    width: 2rem;
+   
+}
+.equal{
+    background-color: #61638f8c;
+    position: relative;
+    top: -77px;
+}
+.bxust{
+    width: 4rem;
+height: 8.65rem;
+}
+.bx0,.bxver,.bxber{
+
+    position: relative;
+    top: -4.8rem;
+}
+.screen{
+
+    width: 94%;
+    height: 20%;
+    background-color: #fbfbfb;
+    margin: auto;
+    position: relative;
+    top: 1.8rem;
+   border-top-left-radius: 0.6rem;
+   border-top-right-radius: 0.6rem;
+}
+.pbir{
+    margin-left: 58px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #fff;
+  position: relative;
+  top: 10px;
+  font-size: 1.5rem;
+ 
+   
+}
+.piki{
+
+margin-top: 27px;
+margin-left: -4px;
+font-family: 'Ubuntu', sans-serif;
+font-size: 13px;
+transition-duration: 0.5s;
+
+}
+.piki:active{
+
+color: white;
+
+
+}
+.result{
+    color: #000000a8;
+   position: relative;
+   top: 80px;
+   left: -50px;
+}
+#output-screen{
+display: block;
+    margin: auto;
+    width: 18.7rem;
+    height: 6rem;
+    position: relative;
+    top: 30px;
+    font-size: 2.5rem;
+    padding-left: 5px;
+    padding-top: 50px;
+    background-color: #fcffff;
+    border: none;
+    color: #000000a8;
+    border-top-right-radius: 0.6rem;
+    border-top-left-radius: 0.6rem;
+    box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+    cursor: pointer;
+    text-align: right;
+    padding-right: 7px ;
+}
+.light{
+
+    width: 25px;
+    height: 25px;
+    background-color: #00000f;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 0.6rem;
+    border: 1px solid gray;
+    margin-top: -16px;
+    margin-left: 280px ;
+    cursor: pointer;
+    transition-duration: 0.5s;
+   
+  
+}
+
+
+
+    
+    </style>
+</head>
+<body>
+            
+
+<div class="box">
+    
+    <p class="pbir">Hafthon Calculator</p>
+
+<div class="light" onclick="lgh();">
+  <p class="piki">Light</p>
+</div>
+  
+
+     
+    <input type="text" id="output-screen" placeholder="0" readonly>
+
+
+
+
+   
+  <hr>
+<div class="littleBox">
+
+ <div class="bx bxc" onclick="Clear();">C</div>
+<div class="bx bxx" onclick="Del();">Del</div>
+<div class="bx bx%" onclick="display('%')" >%</div>
+<div class="bx bxb"onclick="display('/')">÷</div>
+
+<div class="bx bx7" onclick="display('7')">7</div>
+<div class="bx bx8" onclick="display('8')">8</div>
+<div class="bx bx9" onclick="display('9')">9</div>
+
+<div class="bx bxx" onclick="display('*')">x</div>
+
+<div class="bx bx4" onclick="display('4')">4</div>
+<div class="bx bx5" onclick="display('5')">5</div>
+<div class="bx bx6" onclick="display('6')">6</div>
+<div class="bx bxch" onclick="display('-')">-</div>
+
+<div class="bx bx1" onclick="display('1')">1</div>
+<div class="bx bx2" onclick="display('2')">2</div>
+<div class="bx bx3" onclick="display('3')">3</div>
+
+<div class="bx bxust" onclick="display('+')">+</div>
+
+<div class="bx bx0" onclick="display('0')">0</div>
+<div class="bx bxver" onclick="display('.')">,</div>
+<div class=" bx equal" onclick="Calculate();">=</div>
+
+
+
+</div>
+
+</div>
+
+
+
+    <script type="text/javascript">
+    
+    let outputScreen = document.getElementById("output-screen");
+let box = document.querySelector(".box");
+let light = document.querySelector(".light");
+let piki = document.querySelector(".piki");
+const bx = document.querySelectorAll(".bx");
+
+
+function display(num){
+
+    outputScreen.value += num;
+  
+}
+
+function Calculate(){
+
+  try{ 
+       outputScreen.value = eval(outputScreen.value);
+  }
+  catch(err)
+  {
+    outputScreen.value="Xəta"; 
+
+  }
+
+
+}
+function Clear(){
+    outputScreen.value="";
+
+}
+function Del(){
+    outputScreen.value=outputScreen.value.slice(0,-1);
+
+}
+let active = false;
+
+function lgh(){
+
+    if(active == false){
+
+        active = true;
+
+   box.style.backgroundColor="	#28282B";
+   box.style.backgroundColor="	#28282B";
+   piki.style.color="#96aeaf";
+   light.style.backgroundColor="#96aeaf";
+   bx.style.backgroundColor="#1fb127";
+    }
+    else{
+        active = false;
+
+        box.style.backgroundColor="#96aeaf";
+        piki.style.color="black";
+        light.style.backgroundColor="black";
+        
+    }
+}
+
+
+
+
+    
+    
+    </script>
+</body>
+</html>
